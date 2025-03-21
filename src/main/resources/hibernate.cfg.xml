@@ -1,0 +1,25 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+
+        <!--in this session factory tag we should declare some properties-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/CafeVynyl</property>
+        <!--Now we need to declare the username password-->
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">Maxwelldemon327</property>
+        <!--we want the hibernate to create a table-->
+        <property name="hibernate.hbm2ddl.auto">create</property>
+        <!--This will make sure that you will see the query here-->
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.show_sql">true</property>
+        <!--This will make sure we see query in formatted way-->
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.use_sql_comments">true</property>
+
+        <!--we should also add for mapping-->
+        <mapping class="com.aref.Category"/>
+        <mapping class="com.aref.Menuitems"/>
+        <mapping class="com.aref.Vynyl"/>
+
+    </session-factory>
+</hibernate-configuration>
